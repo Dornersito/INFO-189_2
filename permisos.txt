@@ -1,0 +1,6 @@
+vicho;1,2,3
+edgardo;1,2,4,3,5,6
+mati;3,4
+edgard;1,2,3,4
+nico;
+benjamin;1
