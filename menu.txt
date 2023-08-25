@@ -6,3 +6,4 @@
 5,Crear archivo,crear
 6,Agregar texto a archivo,agregar
 7,Nueva opción 1,indefinido
+8,Nueva opción 2,indefinido

@@ -57,15 +57,15 @@ El programa crea una lista enlazada con una estructura donde guarda el numero de
 El programa le dará las opciones a ejecutar en el vector correspondientes a sus permisos.
 Si el usuario no tiene permiso a ejecutar una opción, se le negará.
 
-    Las opciones son las siguientes:
-    -- 0) Salir: Termina el programa.
-    -- 1) Realizar sumatoria del vector: Suma los valores del vector.
-    -- 2) Realizar promedio del vector: Promedia los valores del vector.
-    -- 3) Realizar moda del vector: Calcula la moda del vector.
-    -- 4) Contar elementos del vector: Cuenta los numeros del vector.
-    -- 5) Crear archivo: Crea un archivo con la ruta y nombre especificado.
-    -- 6) Agregar texto a archivo: Escribe en el archivo.
-    -- 7) Nueva opción 1: Funciones no implementadas.
+Las opciones son las siguientes:
+0. Salir: Termina el programa.
+1. Realizar sumatoria del vector: Suma los valores del vector.
+2. Realizar promedio del vector: Promedia los valores del vector.
+3. Realizar moda del vector: Calcula la moda del vector.
+4. Contar elementos del vector: Cuenta los numeros del vector.
+5. Crear archivo: Crea un archivo con la ruta y nombre especificado.
+6. Agregar texto a archivo: Escribe en el archivo.
+7. Nueva opción 1: Funciones no implementadas.
 
 - **Si el usuario no se encuentra en la base de datos**
 Se terminará con la ejecución del programa

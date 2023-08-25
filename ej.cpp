@@ -9,30 +9,10 @@
 #include <unordered_map>
 #include <functional>
 #include <sys/stat.h>
+#include "funciones.h" 
 
-struct Nodo {
-    int numero;
-    std::string frase;
-    std::function<void(std::vector<int>)> funcion_v;
-    std::function<void(std::string, std::string)> funcion_ft;
-    Nodo *siguiente;
-};
 
 using namespace std;
-
-void sumatoria(vector<int> v);
-void promedio(vector<int> v);
-void moda(vector<int> v);
-void contar(vector<int> v);
-bool verificarUsuario(string nombre);
-vector<int> permisosInput(string permisos);
-vector<int> permisosTxt(string usuario);
-void leerMenu(Nodo *&cabeza, string ruta, vector<int> v, string f, string t);
-void salir(vector<int> v);
-void agregar(string ruta, string texto);
-void indefinido(vector<int> v);
-void crear(string ruta, string texto);
-
 
 int main(int argc, char* argv[]){
     int option;
@@ -107,9 +87,9 @@ int main(int argc, char* argv[]){
         cout << "Ingrese opcion: ";
         cin >> opcion;
         system("clear"); 
-
-        if(opcion >= 7){
-            indefinido(vectorInput);
+        
+        if(opcion > cabeza->numero){
+            cout << "Opción inválida" << endl << endl;
         }
         else{
             if (find(permisostxt.begin(), permisostxt.end(), opcion) == permisostxt.end() && opcion != 0){
@@ -128,33 +108,6 @@ int main(int argc, char* argv[]){
             }  
         }
     }
-    
-
-    // int opcion;
-    // while(true){
-    //     cout << "Ingrese opcion: ";
-    //     cin >> opcion;
-
-    //     if(opcion >= 7){
-    //         indefinido(vectorInput);
-    //     }
-    //     else{
-    //         if (find(permisostxt.begin(), permisostxt.end(), opcion) == permisostxt.end() && opcion != 0){
-    //             cout << "El usuario no tiene permiso para " << opcion << endl << endl;
-    //         }
-    //         else{
-    //             for (Nodo *actual = cabeza; actual != nullptr; actual = actual->siguiente) {       
-    //                 if(actual->numero == opcion){
-    //                     if (actual->funcion_v) {
-    //                         actual->funcion_v(vectorInput);
-    //                     } else if (actual->funcion_ft) {
-    //                         actual->funcion_ft(f_ruta, t_texto);
-    //                         }
-    //                     }
-    //                 }
-    //         }  
-    //     }
-    // }
     
     return EXIT_SUCCESS;
 
