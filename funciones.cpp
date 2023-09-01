@@ -11,7 +11,8 @@
 #include <sys/stat.h>
 #include "funciones.h"
 #include <filesystem>
-
+#include <locale>
+#include <map>
 
 using namespace std;
 
@@ -278,46 +279,46 @@ void indefinido(vector<int> v){
 }
 
 
-void contarPalabras(const std::string& input_file, const std::string& output_file) {
-    if (std::filesystem::exists(output_file)) {
-        std::cout << "El archivo de salida " << output_file << " ya existe." << std::endl;
-        return;
+void contarPalabras(const string &input_file, const string &output_file) {
+  ifstream input_file_stream(input_file);
+  if (!input_file_stream.is_open()) {
+    cerr << "El archivo de entrada no existe." << endl << endl;
+    return;
+  }
+
+  vector<string> words;
+
+  string word;
+  while (input_file_stream >> word) {
+    words.push_back(word);
+  }
+
+  map<string, int> word_counts;
+
+  for (const string &word : words) {
+    if (word_counts.find(word) == word_counts.end()) {
+      word_counts[word] = 0;
     }
+    word_counts[word]++;
+  }
 
-    std::ifstream input(input_file);
-    std::ofstream output(output_file);
+  vector<pair<string, int>> sorted_words(word_counts.begin(), word_counts.end());
+  sort(sorted_words.begin(), sorted_words.end(), [](const pair<string, int>& a, const pair<string, int>& b) {
+    return a.second > b.second;
+  });
 
-    if (!input.is_open()) {
-        std::cerr << "Error, no se pudo abrir el archivo de entrada " << input_file << std::endl;
-        return;
-    }
+  ifstream check_output_file(output_file);
+  if (check_output_file.good()) {
+    cout << "El archivo de salida ya existe." << endl << endl;
+    return;
+  }
 
-    if (!output.is_open()) {
-        std::cerr << "Error, no se pudo abrir el archivo de salida " << output_file << std::endl;
-        return;
-    }
+  ofstream output_file_stream(output_file);
+  for (const auto& entry : sorted_words) {
+    output_file_stream << entry.first << ";" << entry.second << endl;
+  }
 
-    std::unordered_map<std::string, int> word_counts;
+  cout << "ARCHIVO CREADO" << endl << endl;
 
-    std::string line;
-    while (getline(input, line)) {
-        std::string word;
-        for (char c : line) {
-            if (isalpha(c)) {
-                word += tolower(c);
-            } else if (!word.empty()) {
-                ++word_counts[word];
-                word.clear();
-            }
-        }
-        if (!word.empty()) {
-            ++word_counts[word];
-        }
-    }
-
-    for (const auto& [word, count] : word_counts) {
-        output << word << ";" << count << "\n";
-    }
-
-    std::cout << "ARCHIVO CREADO" << std::endl << std::endl;
+  output_file_stream.close();
 }

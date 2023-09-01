@@ -10,7 +10,7 @@ Para compilar el programa, utiliza el siguiente comando en la terminal:
 make
 ```
 # Ejecución
-Una vez compilado, puedes ejecutar el programa proporcionando el nombre de usuario y el vector correspondiente. Aquí tienes un ejemplo:
+Una vez compilado, puedes ejecutar el programa proporcionando el nombre de usuario, el vector correspondiente, una ruta de lectura, un texto a escribir, una ruta de input y una ruta de output la . Aquí se muestra un ejemplo:
 
 ```bash
 ./ej -u [edgardo] -v [1,2,3] -f ["ruta;prueba.txt"] -t ["texto de prueba"] -i ["ruta_input"] -o ["ruta_output"]
@@ -29,7 +29,7 @@ menu=./bdd/menu.txt
 ```
 
 # Base de Datos
-La información de usuarios y permisos se almacena en dos archivos de texto: usuarios.txt y permisos.txt. Estos archivos siguen el siguiente formato:
+La información de usuarios y permisos se almacena en dos archivos de texto: usuarios.txt y permisos.txt. Estos archivos, estan organizados en la carpeta **"bdd"** y siguen el siguiente formato:
 
 #### usuarios.txt
 El archivo usuarios.txt contiene los nombres de usuario y su tipo (separados por coma ",") y entre usuarios separados por punto y coma (;).
@@ -64,20 +64,24 @@ El archivo "menu.txt" contiene las opciones de menú para que el usuario pueda i
 El programa crea una lista enlazada con una estructura donde guarda el numero de opción, su descripción y su respectiva función asociada.
 
 ## Ejecución
-- **Si el usuario se encuentra en la base de datos.**
-El programa le dará las opciones a ejecutar en el vector correspondientes a sus permisos.
-Si el usuario no tiene permiso a ejecutar una opción, se le negará.
 
-- Las opciones son las siguientes:
-. 0. Salir: Termina el programa.
-. 1. Realizar sumatoria del vector: Suma los valores del vector.
-. 2. Realizar promedio del vector: Promedia los valores del vector.
-. 3. Realizar moda del vector: Calcula la moda del vector.
-. 4. Contar elementos del vector: Cuenta los numeros del vector.
-. 5. Crear archivo: Crea un archivo con la ruta y nombre especificado.
-. 6. Agregar texto a archivo: Escribe en el archivo.
-. 7. Contar palabras del archivo de entrada.
-. 8. Nueva opción 1: Funciones no implementadas.
+### Si el usuario se encuentra en la base de datos
 
-- **Si el usuario no se encuentra en la base de datos**
-Se terminará con la ejecución del programa
+El programa le dará las opciones a ejecutar en el vector correspondientes a sus permisos. Si el usuario no tiene permiso para ejecutar una opción, se le negará.
+
+Las opciones son las siguientes:
+
+1. Salir: Termina el programa.
+2. Realizar sumatoria del vector: Suma los valores del vector.
+3. Realizar promedio del vector: Promedia los valores del vector.
+4. Realizar moda del vector: Calcula la moda del vector.
+5. Contar elementos del vector: Cuenta los números del vector.
+6. Crear archivo: Crea un archivo con la ruta y nombre especificado.
+7. Agregar texto a archivo: Escribe en el archivo.
+8. Contar palabras del archivo de entrada.
+9. Nueva opción 1: Funciones no implementadas.
+
+### Si el usuario no se encuentra en la base de datos
+
+Se terminará la ejecución del programa.
+
