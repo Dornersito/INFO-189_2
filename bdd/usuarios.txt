@@ -1,0 +1,1 @@
+nico,admin;iban,userRookie;edgardo,userGeneral;

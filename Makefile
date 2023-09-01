@@ -3,7 +3,7 @@ TARGET = ej
 
 # Compilador y opciones de compilación
 CXX = g++
-CXXFLAGS = -std=c++11 -Wall
+CXXFLAGS = -std=c++17 -Wall
 
 # Directorios de búsqueda de archivos fuente y objetos
 SRCDIR = .

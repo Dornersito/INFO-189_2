@@ -5,5 +5,5 @@
 4,Contar elementos del vector,contar
 5,Crear archivo,crear
 6,Agregar texto a archivo,agregar
-7,Nueva opción 1,indefinido
-8,Nueva opción 2,indefinido
+7,Contar palabras de texto,count_words
+8,Nueva opción 1,indefinido
