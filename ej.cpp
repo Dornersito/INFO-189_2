@@ -89,7 +89,7 @@ int main(int argc, char* argv[]){
 
     User user = verificarUsuario(usuario, rutaUsuarios, rutaPermisos);
     if(user.nombre == ""){
-        cout << "NO SE ENCUENTRA" << endl;
+        cout << "EL USUARIO NO SE ENCUENTRA" << endl;
         return EXIT_FAILURE;
     }
 

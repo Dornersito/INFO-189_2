@@ -280,6 +280,11 @@ void indefinido(vector<int> v){
 
 
 void contarPalabras(const string &input_file, const string &output_file) {
+  if (!isFileLargerThan1MB(input_file)) {
+    cerr << "El archivo de entrada no es mayor a 1 MB." << endl << endl;
+    return;
+  }
+
   ifstream input_file_stream(input_file);
   if (!input_file_stream.is_open()) {
     cerr << "El archivo de entrada no existe." << endl << endl;
@@ -318,7 +323,21 @@ void contarPalabras(const string &input_file, const string &output_file) {
     output_file_stream << entry.first << ";" << entry.second << endl;
   }
 
-  cout << "ARCHIVO CREADO" << endl << endl;
+  cout << "ARCHIVO DE CONTEO DE PALABRAS CREADO" << endl << endl;
 
   output_file_stream.close();
+}
+
+bool isFileLargerThan1MB(const string &file_path) {
+  ifstream file_stream(file_path, ios::binary);
+  if (!file_stream.is_open()) {
+    cerr << "El archivo de entrada no existe." << endl << endl;
+    return false;
+  }
+
+  file_stream.seekg(0, ios::end);
+  streampos file_size = file_stream.tellg();
+  file_stream.close();
+
+  return file_size > (1024 * 1024); // 1 MB = 1024 * 1024 bytes
 }

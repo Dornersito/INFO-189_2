@@ -37,5 +37,6 @@ void agregar(std::string ruta, std::string texto);
 void indefinido(std::vector<int> v);
 void crear(std::string ruta_nombre, std::string texto);
 void contarPalabras(const std::string& inputPath, const std::string& outputPath);
+bool isFileLargerThan1MB(const std::string &file_path);
 
 #endif // MAIN_H
