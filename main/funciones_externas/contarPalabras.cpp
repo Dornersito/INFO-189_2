@@ -117,8 +117,8 @@ int main(int argc, char* argv[]){
     ruta_output = argv[3];
     num_threads = stoi(argv[4]);
 
-    if(num_threads > 10){
-        cout << "La cantidad de threads no puede ser mayor a 10" << endl << endl;
+    if(num_threads > 10 || num_threads > static_cast<int>(std::thread::hardware_concurrency())){
+        cout << "La cantidad de threads no puede ser mayor a 10, negativa o mayor a los threads de su equipo (" << thread::hardware_concurrency() << ")" << endl << endl;
         exit(EXIT_FAILURE);
     }
 
@@ -127,7 +127,7 @@ int main(int argc, char* argv[]){
 
     cout << "THREADS A USAR: " << num_threads << endl;
     if(num_threads <= 0){
-        cout << "ERROR, no se pueden usar " << num_threads << " threads" << endl;
+        cout << "ERROR, no se pueden usar " << num_threads << " threads" << endl << endl;
         exit(EXIT_FAILURE);
     } cout << endl;
 

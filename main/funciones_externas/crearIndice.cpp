@@ -49,14 +49,14 @@ void writeIndex(const std::string& filename, const WordMap& wordMap) {
 
     ifstream checkFile(filename);
     if (checkFile.is_open()) {
-        std::cerr << "El archivo ya existe: " << filename << std::endl;
+        std::cerr << "El archivo ya existe: " << filename << endl << endl;
         return;
     }
 
     std::ofstream file(filename);
 
     if (!file.is_open()) {
-        std::cerr << "No se pudo abrir el archivo: " << filename << std::endl;
+        std::cerr << "No se pudo abrir el archivo: " << filename << endl;
         return;
     }
 
@@ -67,7 +67,7 @@ void writeIndex(const std::string& filename, const WordMap& wordMap) {
         }
         file << "\n";
     }
-    cout << "El proceso pid=" << pid << " generó el archivo=" << filename << endl;
+    cout << "El proceso pid=" << pid << " generó el archivo=" << filename << endl << endl;
 }
 
 vector<string> lee_archivos(string ruta_input) {

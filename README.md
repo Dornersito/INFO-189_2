@@ -4,13 +4,12 @@
 Este programa implementa una aplicación que permite gestionar permisos de usuarios y realizar diferentes operaciones numéricas en base a permisos otorgados.
 
 ## Compilación
-Para compilar el programa, utiliza el siguiente comando en la terminal:
-
+Para compilar el programa, utiliza el siguiente comando en la terminal dentro del directorio /main
 ```bash
 make
 ```
 # Ejecución
-Una vez compilado, puedes ejecutar el programa proporcionando el nombre de usuario, el vector correspondiente, una ruta de lectura, un texto a escribir, una ruta de input y una ruta de output la . Aquí se muestra un ejemplo:
+Una vez compilado, puedes ejecutar el programa proporcionando el nombre de usuario, el vector correspondiente, una ruta de lectura, un texto a escribir, una ruta de input y una ruta de output. Aquí se muestra un ejemplo:
 
 ```bash
 ./ej -u [edgardo] -v [1,2,3] -f ["ruta;prueba.txt"] -t ["texto de prueba"] -i ["ruta_input"] -o ["ruta_output"]
@@ -64,7 +63,9 @@ El archivo "menu.txt" contiene las opciones de menú para que el usuario pueda i
 5,Crear archivo,crear
 6,Agregar texto a archivo,agregar
 7,Contar palabras de texto,count_words
-8,Nueva opción 1,indefinido
+8,PREPARAR DATOS PARA INDICE INVERTIDO,preparar_datos
+9,CREAR INDICE INVERTIDO,crear_indice
+10,Nueva opción 1,indefinido
 ```
 El programa crea una lista enlazada con una estructura donde guarda el numero de opción, su descripción y su respectiva función asociada.
 
@@ -87,6 +88,13 @@ Las opciones son las siguientes:
 9. PREPARAR DATOS PARA INDICE INVERTIDO: Lee archivos de una ruta específica y crea archivos de salida con su conteo de palabras.
 10. CREAR INDICE INVERTIDO: Lee los conteos de palabras y genera un archivo con la cantidad de ocurrencias por palabra en cada archivo.
 9. Nueva opción 1: Funciones no implementadas.
+
+
+#### Opciones 8) y 9)
+*Tanto las opciones 8) y 9), son procesos externos, estos se llaman al seleccionar la opción con sus respectivos parámetros:
+**PREPARAR DATOS PARA INDICE INVERTIDO:** ```./app [EXTENTION] [PATH_FILES_IN] [PATH_FILES_OUT] [AMOUNT_THREADS]```
+**CREAR INDICE INVERTIDO:** ```./app [INVERTED_INDEX_FILE] [PATH_FILES_OUT]```*
+**(Todos estos parámetros se extraen desde el archivo .env*)*
 
 ### Si el usuario no se encuentra en la base de datos
 
