@@ -23,9 +23,14 @@ Los parametrors **-i** y **-o** indican rutas de lectura y escritura de archivo 
 El proyecto tiene un archivo **.env** en el que se encuentran definidas las rutas de las bases de datos que se utilizarán en el programa principal. Este es de  la siguiente forma:
 
 ```bash
-usuarios=./bdd/usuarios.txt
-permisos=./bdd/permisos.txt
-menu=./bdd/menu.txt
+usuarios=/home/edgardo/Programacion/INFO-189_2/bdd/usuarios.txt
+permisos=/home/edgardo/Programacion/INFO-189_2/bdd/permisos.txt
+menu=/home/edgardo/Programacion/INFO-189_2/bdd/menu.txt
+EXTENTION=txt
+PATH_FILES_IN=~/Programacion/INFO-189_2/files/in
+PATH_FILES_OUT=~/Programacion/INFO-189_2/files/out
+AMOUNT_THREADS=15
+INVERTED_INDEX_FILE=~/Programacion/INFO-189_2/main/funciones_externas/index.idx
 ```
 
 # Base de Datos
@@ -79,6 +84,8 @@ Las opciones son las siguientes:
 6. Crear archivo: Crea un archivo con la ruta y nombre especificado.
 7. Agregar texto a archivo: Escribe en el archivo.
 8. Contar palabras del archivo de entrada.
+9. PREPARAR DATOS PARA INDICE INVERTIDO: Lee archivos de una ruta específica y crea archivos de salida con su conteo de palabras.
+10. CREAR INDICE INVERTIDO: Lee los conteos de palabras y genera un archivo con la cantidad de ocurrencias por palabra en cada archivo.
 9. Nueva opción 1: Funciones no implementadas.
 
 ### Si el usuario no se encuentra en la base de datos

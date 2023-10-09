@@ -1,1 +1,1 @@
-nico,userGeneral;iban,userRookie;edgardo,userGeneral;
+nico,userGeneral;iban,userRookie;edgardo,userGeneral;admin,admin;

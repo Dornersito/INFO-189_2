@@ -6,4 +6,6 @@
 5,Crear archivo,crear
 6,Agregar texto a archivo,agregar
 7,Contar palabras de texto,count_words
-8,Nueva opción 1,indefinido
+8,PREPARAR DATOS PARA INDICE INVERTIDO,preparar_datos
+9,CREAR INDICE INVERTIDO,crear_indice
+10,Nueva opción 1,indefinido
